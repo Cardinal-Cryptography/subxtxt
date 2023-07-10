@@ -1,0 +1,15 @@
+[package]
+name = "subxtxt"
+version = "0.1.0"
+authors = ["Cardinal"]
+description = "Convenient extensions to `subxt` library"
+documentation = "https://docs.rs/subxtxt"
+edition = "2021"
+homepage = "https://alephzero.org"
+keywords = ["blockchain", "substrate", "polkadot", "subxt"]
+license = "Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/Cardinal-Cryptography/aleph-node"
+
+[dependencies]
+

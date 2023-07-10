@@ -1,0 +1,53 @@
+---
+name: Rust checks
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  main:
+    name: Run check, test and lints
+    runs-on: [self-hosted, Linux, X64, large]
+    env:
+      CARGO_INCREMENTAL: 0
+      RUSTC_WRAPPER: sccache
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Install Rust toolchain
+        uses: Cardinal-Cryptography/github-actions/install-rust-toolchain@v1
+        with:
+          targets: wasm32-unknown-unknown
+          components: clippy rustfmt
+
+      - name: Run format checks
+        uses: actions-rs/cargo@v1
+        with:
+          command: fmt
+          args: --all
+
+      - name: Run linter
+        uses: actions-rs/cargo@v1
+        env:
+          # https://github.com/mozilla/sccache/issues/966
+          RUSTC_WRAPPER: ""
+          RUSTC_WORKSPACE_WRAPPER: sccache
+        with:
+          command: clippy
+          args: --all-targets -- --no-deps -D warnings
+
+      - name: Run unit test suite
+        uses: actions-rs/cargo@v1
+        with:
+          command: test
