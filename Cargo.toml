@@ -1,6 +1,6 @@
 [package]
 name = "subxtxt"
-version = "0.1.0"
+version = "0.0.0"
 authors = ["Cardinal"]
 description = "Convenient extensions to `subxt` library"
 documentation = "https://docs.rs/subxtxt"
