@@ -6,6 +6,7 @@ use subxt::ext::sp_core::{crypto::AccountId32, sr25519, H256};
 
 pub mod connection;
 mod key_pair;
+pub mod pallets;
 
 pub use key_pair::*;
 
@@ -17,8 +18,12 @@ pub type AccountId = AccountId32;
 pub type CodeHash = H256;
 /// An alias for a block hash type.
 pub type BlockHash = H256;
+/// An alias for a block number type.
+pub type BlockNumber = u32;
 /// An alias for a transaction hash type.
 pub type TxHash = H256;
+/// An alias for the amount of tokens.
+pub type Balance = u128;
 
 /// When submitting a transaction, wait for given status before proceeding.
 #[derive(Copy, Clone)]
@@ -29,4 +34,15 @@ pub enum TxStatus {
     Finalized,
     /// A tx must be successfully submitted.
     Submitted,
+}
+
+/// Weight of a transaction.
+#[derive(Clone, Debug, Eq, PartialEq, codec::Decode, codec::Encode)]
+pub struct Weight {
+    /// Execution time coordinate.
+    #[codec(compact)]
+    pub ref_time: u64,
+    /// Proof size coordinate.
+    #[codec(compact)]
+    pub proof_size: u64,
 }
