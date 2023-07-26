@@ -1,21 +1,24 @@
-[package]
-name = "subxtxt"
+[workspace]
+
+members = [
+    "subxtxt",
+]
+
+[workspace.package]
 version = "0.0.0"
 authors = ["Cardinal"]
-description = "Convenient extensions to `subxt` library"
-documentation = "https://docs.rs/subxtxt"
 edition = "2021"
 homepage = "https://alephzero.org"
 keywords = ["blockchain", "substrate", "polkadot", "subxt"]
 license = "Apache-2.0"
 readme = "README.md"
-repository = "https://github.com/Cardinal-Cryptography/aleph-node"
+repository = "https://github.com/Cardinal-Cryptography/subxtxt"
 
-[dependencies]
+[workspace.dependencies]
 anyhow = { version = "1.0.71" }
 async-trait = { version = "0.1.71" }
-codec = { package = 'parity-scale-codec', version = "3.0.0", features = ['derive'] }
+parity-scale-codec = { version = "3.0.0" }
 log = { version = "0.4" }
-serde = { version = "1.0", features = ["derive"] }
+serde = { version = "1.0" }
 serde_json = { version = "1.0.94" }
 subxt = { version = "0.25.0" }

@@ -37,7 +37,7 @@ pub enum TxStatus {
 }
 
 /// Weight of a transaction.
-#[derive(Clone, Debug, Eq, PartialEq, codec::Decode, codec::Encode)]
+#[derive(Clone, Debug, Eq, PartialEq, parity_scale_codec::Decode, parity_scale_codec::Encode)]
 pub struct Weight {
     /// Execution time coordinate.
     #[codec(compact)]

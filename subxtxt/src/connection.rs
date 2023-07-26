@@ -3,8 +3,8 @@
 use std::{thread::sleep, time::Duration};
 
 use anyhow::anyhow;
-use codec::Decode;
 use log::info;
+use parity_scale_codec::Decode;
 use serde::{Deserialize, Serialize};
 use subxt::{
     blocks::ExtrinsicEvents,

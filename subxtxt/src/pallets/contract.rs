@@ -1,9 +1,9 @@
-use codec::Compact;
+use parity_scale_codec::Compact;
 
 use crate::{connection::TxInfo, AccountId, Balance, BlockHash, CodeHash, TxStatus, Weight};
 
 /// Arguments to [`ContractRpc::call_and_get`].
-#[derive(codec::Encode)]
+#[derive(parity_scale_codec::Encode)]
 pub struct ContractCallArgs {
     /// Who is singing a tx.
     pub origin: AccountId,
