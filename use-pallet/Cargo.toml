@@ -1,0 +1,22 @@
+[package]
+name = "subxtxt-use-pallet"
+
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+homepage.workspace = true
+keywords.workspace = true
+license.workspace = true
+readme.workspace = true
+repository.workspace = true
+
+description = "Procedural macro for generating pallet API implemetation"
+documentation = "https://docs.rs/subxtxt-use-pallet"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+proc-macro2 = { workspace = true }
+quote = { workspace = true }
+syn = { workspace = true }
