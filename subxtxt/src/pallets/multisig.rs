@@ -6,7 +6,7 @@ pub type CallHash = [u8; 32];
 pub type MultisigThreshold = u16;
 
 /// Struct describing coordinates of a multisig aggregation.
-#[derive(Clone, Debug, Eq, PartialEq, codec::Decode, codec::Encode)]
+#[derive(Clone, Debug, Eq, PartialEq, parity_scale_codec::Decode, parity_scale_codec::Encode)]
 pub struct Timepoint {
     /// Index of a block.
     pub height: BlockNumber,
