@@ -2,7 +2,7 @@ use crate::{connection::TxInfo, AccountId, Balance, BlockHash, TxStatus};
 
 /// Pallet balances read-only API.
 #[async_trait::async_trait]
-pub trait BalanceApi {
+pub trait BalancesApi {
     /// The type of balance lock.
     type BalanceLock: Send;
 
@@ -41,7 +41,7 @@ pub trait BalanceApi {
 
 /// Pallet balances API
 #[async_trait::async_trait]
-pub trait BalanceUserApi {
+pub trait BalancesUserApi {
     /// API for [`transfer`](https://paritytech.github.io/substrate/master/pallet_balances/pallet/struct.Pallet.html#method.transfer) call.
     async fn transfer(
         &self,
@@ -63,7 +63,7 @@ pub trait BalanceUserApi {
 
 /// Pallet balances logic not directly related to any pallet call.
 #[async_trait::async_trait]
-pub trait BalanceUserBatchExtApi {
+pub trait BalancesUserBatchExtApi {
     /// Performs batch of `balances.transfer` calls.
     /// * `dest` - a list of accounts to send tokens to
     /// * `amount` - an amount to transfer
