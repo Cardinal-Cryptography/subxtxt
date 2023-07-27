@@ -18,6 +18,11 @@ anyhow = { workspace = true }
 async-trait = { workspace = true }
 parity-scale-codec = { workspace = true, features = ["derive"] }
 log = { workspace = true }
+rand = { workspace = true }
 serde = { workspace = true }
 serde_json = { workspace = true }
 subxt = { workspace = true }
+
+[dev-dependencies]
+testcontainers = { workspace = true }
+tokio = { workspace = true, features = ["rt-multi-thread"] }
