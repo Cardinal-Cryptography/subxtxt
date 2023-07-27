@@ -9,6 +9,7 @@ mod key_pair;
 pub mod pallets;
 
 pub use key_pair::*;
+pub use subxtxt_use_pallet::use_pallet;
 
 /// An alias for a type of a key pair that signs chain transactions.
 pub type RawKeyPair = sr25519::Pair;

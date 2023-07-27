@@ -26,3 +26,6 @@ serde = { version = "1.0" }
 serde_json = { version = "1.0.94" }
 subxt = { version = "0.25.0" }
 syn = { version = "2" }
+
+subxtxt = { version = "0.0.0", path = "subxtxt" }
+subxtxt-use-pallet = { version = "0.0.0", path = "use-pallet" }

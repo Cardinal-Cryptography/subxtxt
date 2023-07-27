@@ -8,6 +8,8 @@ pub trait AuthorRpc {
     async fn author_rotate_keys(&self) -> anyhow::Result<Self::SessionKeys>;
 }
 
+#[allow(missing_docs)]
+#[macro_export]
 macro_rules! pallet_api_impl {
     ($SessionKeys: ty) => {
         #[async_trait::async_trait]
