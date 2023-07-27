@@ -16,6 +16,17 @@ impl From<PalletConfiguration> for CodeGenerator {
 
 impl CodeGenerator {
     pub fn generate_code(&self) -> Result<TokenStream2, syn::Error> {
-        Ok(quote! {})
+        let pallet_name = &self.config.pallet_name;
+
+        Ok(quote! {
+            use ::subxtxt::anyhow;
+            use ::subxtxt::async_trait;
+            use ::subxtxt::parity_scale_codec;
+
+            use ::subxtxt::pallets::#pallet_name::*;
+
+            // ::subxtxt::pallets::#pallet_name
+            ::subxtxt::pallet_api_impl!(());
+        })
     }
 }

@@ -8,7 +8,10 @@ pub mod connection;
 mod key_pair;
 pub mod pallets;
 
+pub use anyhow;
+pub use async_trait;
 pub use key_pair::*;
+pub use parity_scale_codec;
 pub use subxtxt_use_pallet::use_pallet;
 
 /// An alias for a type of a key pair that signs chain transactions.

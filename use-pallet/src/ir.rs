@@ -2,8 +2,8 @@ use proc_macro2::TokenStream as TokenStream2;
 
 #[derive(Clone, Eq, PartialEq, Debug)]
 pub struct PalletConfiguration {
-    pallet_name: syn::Ident,
-    type_declarations: Vec<syn::ItemType>,
+    pub pallet_name: syn::Ident,
+    pub type_declarations: Vec<syn::ItemType>,
 }
 
 impl PalletConfiguration {
