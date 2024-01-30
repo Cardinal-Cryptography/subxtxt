@@ -169,7 +169,7 @@ pub trait SignedConnectionApi: ConnectionApi {
     /// ```ignore
     ///     let tx = api::tx()
     ///         .balances()
-    ///         .transfer(MultiAddress::Id(dest), amount);
+    ///         .transfer_allow_death(MultiAddress::Id(dest), amount);
     ///     conn.send_tx(tx, status).await
     /// ```
     async fn send_tx<Call: TxPayload + Send + Sync>(
